@@ -23,7 +23,7 @@ test:
 
 production:
   adapter: postgresql
-  database: epid
+  database: epid_production
   pool: 5
   timeout: 5000
   host: localhost
