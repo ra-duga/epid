@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date start:</strong>
+  <%= @employment_contract.date_start %>
+</p>
+
+<p>
+  <strong>Date and:</strong>
+  <%= @employment_contract.date_and %>
+</p>
+
+<%= link_to 'Edit', edit_company_employment_contract_path(@employment_contract) %> |
+<%= link_to 'Back', company_employment_contracts_path %>

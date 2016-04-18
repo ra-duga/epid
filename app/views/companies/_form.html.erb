@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="col-lg-9">
+    <%= simple_form_for(@company) do |f| %>
+    <div class="form-group row">
+      <label for="name" class="col-sm-2 form-control-label">Название</label>
+      <div class="col-sm-10">
+        <%= f.input :name, :placeholder => "Название", :label => false, :class => "form-control", :id => "name" %>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="decription" class="col-sm-2 form-control-label">Описание</label>
+      <div class="col-sm-10">
+        <%= f.input :description, as: :text , :placeholder => "Описание", :label => false, :class => "form-control", :id => "decription" %>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="url" class="col-sm-2 form-control-label">Адрес сайта</label>
+      <div class="col-sm-10">
+        <div class="input-group">
+          <div class="input-group-addon">http://</div>
+          <%= f.input :url, :placeholder => "www.agm.estate", :label => false, :class => "form-control", :id => "url" %>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="phone" class="col-sm-2 form-control-label">Номер телефона</label>
+      <div class="col-sm-10">
+        <%= f.input :phone, :placeholder => "(821) 123-34-54", :label => false, :class => "form-control", :id => "phone" %>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="adress" class="col-sm-2 form-control-label">Адрес</label>
+      <div class="col-sm-10">
+        <%= f.input :adress, :placeholder => "Санкт-Петербург, Московский пр., 91, оф. 529", :label => false, :class => "form-control", :id => "adress" %>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="logotype" class="col-sm-2 form-control-label">Логотип</label>
+      <div class="col-sm-10">
+        <%= f.file_field :logotype, :label => false, :class => "form-control", :id => "logotype" %>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="is_confirmed" class="col-sm-2 form-control-label">Подтвержден</label>
+      <div class="col-sm-10">
+        <%= f.input :is_confirmed, :label => false, :class => "form-control", :id => "is_confirmed" %>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-offset-2 col-sm-10">
+        <%= f.button :submit,  "Сохранить", :class => "btn btn-lg btn-success"  %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

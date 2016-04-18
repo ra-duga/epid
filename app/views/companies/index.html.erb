@@ -1,0 +1,28 @@
+<h1>Агентства недвижимости</h1>
+
+<div class="card-columns">
+  <% @companies.each do |company| %>
+    <div class="card"  style="width: 18rem;">
+      <div class="card-header">
+        <h4><%= company.name %></h4>
+      </div>
+      <img src="<%= company.logotype.url %>" width="286" >
+
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><%= company.adress %></li>
+        <li class="list-group-item"><%= company.phone %></li>
+        <li class="list-group-item">Сотрудников: <%= company.employments.count %></li>
+      </ul>
+
+      <div class="card-block">
+        <a href="<%= company.url %>" class="card-link">Веб сайт</a>
+      </div>
+
+      <div class="card-block">
+        <%= link_to 'Show', company, class: "card-link" %>
+        <%= link_to 'Edit', edit_company_path(company), class: "card-link" %>
+        <%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' }, class: "card-link" %>
+      </div>
+    </div>
+  <% end %>
+</div>

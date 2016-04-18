@@ -1,0 +1,28 @@
+
+<h1>Специалисты</h1>
+
+<div class="card-columns">
+  <% @employments.each do |employment| %>
+    <div class="card"  style="width: 18rem;">
+      <div class="card-header">
+        <%= employment.second_name %> <%= employment.first_name %> <%= employment.third_name %>
+      </div>
+      <img src="<%= employment.photo.url %>" width="286" alt="<%= employment.second_name %> <%= employment.first_name %> <%= employment.third_name %>">
+
+
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><strong>Дата рождения:</strong> <%= employment.birth_date %></li>
+        <li class="list-group-item"><strong>Специальность:</strong> <%= employment.specialty.name %></li>
+        <li class="list-group-item"><strong>Телефон:</strong> <%= employment.phone %></li>
+
+      </ul>
+
+
+      <div class="card-block">
+        <%= link_to 'Show', employment, class: "card-link" %>
+        <%= link_to 'Edit', edit_employment_path(employment), class: "card-link" %>
+        <%= link_to 'Destroy', employment, method: :delete, data: { confirm: 'Are you sure?' }, class: "card-link" %>
+      </div>
+    </div>
+  <% end %>
+</div>

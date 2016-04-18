@@ -1,0 +1,69 @@
+<div class="row">
+  <div class="col-lg-9">
+      <%= simple_form_for(@employment) do |f| %>
+      <div class="form-group row">
+        <label for="first_name" class="col-sm-2 form-control-label">Имя</label>
+        <div class="col-sm-10">
+          <%= f.input :first_name, :placeholder => "Имя", :label => false, :class => "form-control", :id => "first_name" %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="second_name" class="col-sm-2 form-control-label">Фамилия</label>
+        <div class="col-sm-10">
+          <%= f.input :second_name, :placeholder => "Фамилия", :label => false, :class => "form-control", :id => "second_name" %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="third_name" class="col-sm-2 form-control-label">Отчество</label>
+        <div class="col-sm-10">
+          <%= f.input :third_name, :placeholder => "Отчество", :label => false, :class => "form-control", :id => "third_name" %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="birth_date" class="col-sm-2 form-control-label">Дата рождения</label>
+        <div class="col-sm-10">
+          <%= f.input :birth_date, :label => false,
+                                   as: :date, start_year: Date.today.year - 90,
+                                              end_year: Date.today.year - 12,
+                                              discard_day: false,
+                                              order: [:day, :month, :year] %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="phone" class="col-sm-2 form-control-label">Номер телефона</label>
+        <div class="col-sm-10">
+          <%= f.input :phone, :placeholder => "Номер телефона", :label => false, :class => "form-control", :id => "phone" %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="photo" class="col-sm-2 form-control-label">Фотография</label>
+        <div class="col-sm-10">
+          <%= f.file_field :photo, :label => false, :class => "form-control", :id => "photo" %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="specialty" class="col-sm-2 form-control-label">Специализация</label>
+        <div class="col-sm-10">
+          <%= f.association :specialty, collection: Specialty.order(:name), prompt: "Выберите специализацию", label: false %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="decription" class="col-sm-2 form-control-label">Комментарии</label>
+        <div class="col-sm-10">
+          <%= f.input :decription, as: :text , :placeholder => "Комментарии", :label => false, :class => "form-control", :id => "decription" %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="is_confirmed" class="col-sm-2 form-control-label">Подтвержден</label>
+        <div class="col-sm-10">
+          <%= f.input :is_confirmed, :label => false, :class => "form-control", :id => "is_confirmed" %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-offset-2 col-sm-10">
+          <%= f.button :submit,  "Сохранить", :class => "btn btn-lg btn-success"  %>
+        </div>
+      </div>
+      <% end %>
+  </div>
+</div>
