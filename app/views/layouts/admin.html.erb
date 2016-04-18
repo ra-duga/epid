@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Epid</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="container">
+    <div class="header clearfix">
+      <nav>
+        <ul class="nav nav-pills pull-xs-right">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Главная</a>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Компании", companies_url, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Специалисты", employments_url, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">О проекте</a>
+          </li>
+
+        </ul>
+      </nav>
+      <h3 class="text-muted">Админка
+      </h3>
+    </div>
+    <%= flash_messages %>
+    <%= yield %>
+
+    <footer class="footer">
+      <p>&copy; Company 2014</p>
+    </footer>
+
+  </div> <!-- /container -->
+
+
+
+
+
+</body>
+</html>

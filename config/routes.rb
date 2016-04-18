@@ -5,9 +5,19 @@ Rails.application.routes.draw do
   root 'welcome#index'
   resources :employments
   resources :companies do
-    resources :employment_contracts    
+    resources :employment_contracts
   end
-  resources :specialties
+
+  resources :specialties, only: [:index, :show]
+
+  namespace :admin do
+    resources :specialties
+    resources :employments
+  end
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
