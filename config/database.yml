@@ -26,3 +26,6 @@ production:
   database: epid
   pool: 5
   timeout: 5000
+  host: localhost
+  username: pguser
+  password: hadver@pass
