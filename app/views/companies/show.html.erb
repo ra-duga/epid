@@ -1,11 +1,9 @@
-<h1><%= @company.name %></h1>
+<div class="title">
+  <h1><%= @company.name %></h1>
+</div>
 <ul class="list-group card" style="width:35rem; ">
   <li class="list-group-item"><%= image_tag(@company.logotype.url, height:"100", class: "img-responsive") %></li>
   <li class="list-group-item"><%= @company.adress %></li>
   <li class="list-group-item"><%= @company.phone %></li>
 </ul>
 <p><%= @company.description %></p>
-
-
-<p>Добавить сотрудника</p>
-<%= link_to "Добавить", new_company_employment_contract_path(@company) %>

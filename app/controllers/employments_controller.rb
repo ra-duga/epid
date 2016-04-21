@@ -1,5 +1,5 @@
 class EmploymentsController < ApplicationController
-  before_action :set_employment, only: [:show, :edit, :update, :destroy]
+  before_action :set_employment, only: [:show, :update, :destroy]
 
   # GET /employments
   # GET /employments.json
@@ -17,10 +17,6 @@ class EmploymentsController < ApplicationController
     @employment = Employment.new
   end
 
-  # GET /employments/1/edit
-  def edit
-  end
-
   # POST /employments
   # POST /employments.json
   def create
@@ -34,30 +30,6 @@ class EmploymentsController < ApplicationController
         format.html { render :new }
         format.json { render json: @employment.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # PATCH/PUT /employments/1
-  # PATCH/PUT /employments/1.json
-  def update
-    respond_to do |format|
-      if @employment.update(employment_params)
-        format.html { redirect_to @employment, notice: 'Employment was successfully updated.' }
-        format.json { render :index, status: :ok, location: @employment }
-      else
-        format.html { render :edit }
-        format.json { render json: @employment.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /employments/1
-  # DELETE /employments/1.json
-  def destroy
-    @employment.destroy
-    respond_to do |format|
-      format.html { redirect_to employments_url, notice: 'Employment was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 

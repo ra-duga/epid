@@ -1,14 +1,10 @@
 <div class="title">
   <h1>Компании</h1>
 </div>
-<%= simple_form_for :company, url: companies_path  do |form| %>
-  <%=  form.input :company, :url => autocomplete_company_name_companies_path, :as => :autocomplete %>
-<% end %>
-
 <div class="container company-list">
   <% @companies.each do |company| %>
     <div class="row">
-      <div class="col-md-10 col-md-offset-1 company-item">
+      <div class="col-md-8 col-md-offset-2 company-item">
         <div class="col-md-2 company-logo">
           <%= link_to(company) do %>
             <img src="<%= company.logotype.url %>" alt="<%= company.name %>">
@@ -18,18 +14,16 @@
           <h4 class="company-name"><%= link_to company.name, company%></h4>
           <p class="company-employees"><b><%= company.employments.count %></b> сотрудник</p>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
           <p class="company-phone"><%= company.phone %></p>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-3">
           <p class="company-url"><a href="<%= company.url %>"><%= company.url %></a></p>
         </div>
       </div>
     </div>
   <% end %>
 </div>
-
-
 <div class="container">
   <div class="row">
     <div class="col-md-10 col-md-offset-1 company-item">

@@ -18,7 +18,10 @@
             <a class="nav-link" href="/about">О проекте</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/about">Вход / регистрация</a>
+            <%= link_to "Добавить компанию", new_company_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Регистрация", new_employment_path, class: "nav-link" %>
           </li>
         </ul>
         <h3 class="text-muted">ESTATE PROFESSIONAL ID</h3>
@@ -46,7 +49,7 @@
   </div>
 
     <footer class="footer">
-      
+
     </footer>
 
   </div> <!-- /container -->

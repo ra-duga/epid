@@ -32,10 +32,8 @@ class EmploymentContractsController < ApplicationController
     respond_to do |format|
       if @employment_contract.save
         format.html { redirect_to @company, notice: 'Employment contract was successfully created.' }
-        format.json { render :show, status: :created, location: @employment_contract }
       else
         format.html { render :new }
-        format.json { render json: @company.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -46,10 +44,8 @@ class EmploymentContractsController < ApplicationController
     respond_to do |format|
       if @employment_contract.update(employment_contract_params)
         format.html { redirect_to @company_employment_contract, notice: 'Employment contract was successfully updated.' }
-        format.json { render :show, status: :ok, location: @employment_contract }
       else
         format.html { render :edit }
-        format.json { render json: @company_employment_contract.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -60,7 +56,6 @@ class EmploymentContractsController < ApplicationController
     @employment_contract.destroy
     respond_to do |format|
       format.html { redirect_to employment_contracts_url, notice: 'Employment contract was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 

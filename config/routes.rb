@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   resources :employments
   resources :companies do
     get :autocomplete_company_name, :on => :collection
-
     resources :employment_contracts
   end
 
