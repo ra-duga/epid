@@ -29,7 +29,7 @@ set :puma_init_active_record, true  # Change to false when not using ActiveRecor
 # set :branch,        :master
 # set :format,        :pretty
 # set :log_level,     :debug
-# set :keep_releases, 5
+ set :keep_releases, 5
 
 ## Linked Files & Directories (Default None):
 # set :linked_files, %w{config/database.yml}
@@ -57,7 +57,7 @@ namespace :deploy do
         exit
       end
     end
-  
+
   end
 
   desc 'Initial Deploy'

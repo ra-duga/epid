@@ -7,32 +7,46 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="container">
-    <div class="header clearfix">
-      <nav>
-        <ul class="nav nav-pills pull-xs-right">
-          <li class="nav-item active">
-            <a class="nav-link" href="/">Главная</a>
-          </li>
+  <div class="container-fluid  ">
+    <div class="header clearfix navbar navbar-fixed-top navbar-dark bg-inverse">
+      <nav >
+        <ul class="nav nav-pills pull-xs-right ">
           <li class="nav-item">
             <%= link_to "Компании", companies_url, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Специалисты", employments_url, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="/about">О проекте</a>
           </li>
-
+          <li class="nav-item">
+            <a class="nav-link" href="/about">Вход / регистрация</a>
+          </li>
         </ul>
+        <h3 class="text-muted">ESTATE PROFESSIONAL ID</h3>
       </nav>
-      <h3 class="text-muted">Estate profesional ID</h3>
+      <div class="search-panel">
+        <div class="wrp">
+          <form class="form-inline">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Поиск людей, компаний">
+              <span class="input-group-btn">
+                <button class="btn btn-secondary" type="button">Go!</button>
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
+
+
+  </div>
+  <div class="container">
     <%= flash_messages %>
     <%= yield %>
 
+  </div>
+
     <footer class="footer">
-      <p>&copy; Company 2014</p>
+      
     </footer>
 
   </div> <!-- /container -->
