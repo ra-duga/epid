@@ -17,3 +17,92 @@
  .jumbotron {
    text-align: center;
  }
+
+.header {
+  padding: 0px;
+  background-color: #1b1b1b;
+  nav {
+     width: 1024px;
+     margin: 0 auto;
+     h3{
+       font-size: 1.1rem;
+       padding-top: 0.4rem;
+     }
+     ul{
+       li{
+         a{
+           text-transform: uppercase;
+           font-size: 0.8rem;
+           font-weight: 600;
+           color: #999;
+           &:hover{
+             color: white;
+           }
+         }
+       }
+     }
+  }
+  .search-panel{
+    background-color: #e6e6e6;
+    padding: 5px 0px;
+    .wrp{
+      width: 1024px;
+      margin: 0 auto;
+    }
+    input.form-control{
+      width: 950px;
+    }
+  }
+}
+
+.title{
+  margin: 100px 0;
+  h1{
+    font-weight: lighter;
+    text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px dotted;
+  }
+}
+
+.company-list{
+  font-size: 0.9rem;
+  .company-item{
+    border-bottom: 1px dotted;
+    padding: 30px 0px;
+  }
+
+  .company-logo{
+    a{
+      text-align: left;
+      img{
+        width: 100%;
+      }
+    }
+  }
+  .company-name{
+    font-size: 1.1rem;
+    font-weight: bold;
+    a{
+      color: #000
+    }
+
+  }
+  .company-employees{
+    color: #999;
+  }
+  .company-phone{
+    text-align: center;
+  }
+  .company-url{
+    text-align: right;
+  }
+
+
+}
+.pagination{
+  li{
+    display: inline-block;
+  }
+}

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   root 'welcome#index'
   resources :employments
   resources :companies do
+    get :autocomplete_company_name, :on => :collection
+
     resources :employment_contracts
   end
 
@@ -14,7 +16,6 @@ Rails.application.routes.draw do
     resources :specialties
     resources :employments
   end
-
 
 
 

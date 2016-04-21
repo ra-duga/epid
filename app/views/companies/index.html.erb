@@ -1,28 +1,39 @@
-<h1>Агентства недвижимости</h1>
+<div class="title">
+  <h1>Компании</h1>
+</div>
+<%= simple_form_for :company, url: companies_path  do |form| %>
+  <%=  form.input :company, :url => autocomplete_company_name_companies_path, :as => :autocomplete %>
+<% end %>
 
-<div class="card-columns">
+<div class="container company-list">
   <% @companies.each do |company| %>
-    <div class="card"  style="width: 18rem;">
-      <div class="card-header">
-        <h4><%= company.name %></h4>
-      </div>
-      <img src="<%= company.logotype.url %>" width="286" >
-
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item"><%= company.adress %></li>
-        <li class="list-group-item"><%= company.phone %></li>
-        <li class="list-group-item">Сотрудников: <%= company.employments.count %></li>
-      </ul>
-
-      <div class="card-block">
-        <a href="<%= company.url %>" class="card-link">Веб сайт</a>
-      </div>
-
-      <div class="card-block">
-        <%= link_to 'Show', company, class: "card-link" %>
-        <%= link_to 'Edit', edit_company_path(company), class: "card-link" %>
-        <%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' }, class: "card-link" %>
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1 company-item">
+        <div class="col-md-2 company-logo">
+          <%= link_to(company) do %>
+            <img src="<%= company.logotype.url %>" alt="<%= company.name %>">
+          <% end %>
+        </div>
+        <div class="col-md-3">
+          <h4 class="company-name"><%= link_to company.name, company%></h4>
+          <p class="company-employees"><b><%= company.employments.count %></b> сотрудник</p>
+        </div>
+        <div class="col-md-3">
+          <p class="company-phone"><%= company.phone %></p>
+        </div>
+        <div class="col-md-2">
+          <p class="company-url"><a href="<%= company.url %>"><%= company.url %></a></p>
+        </div>
       </div>
     </div>
   <% end %>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 company-item">
+      <%= will_paginate @companies, renderer: BootstrapPagination::Rails  %>
+    </div>
+  </div>
 </div>
