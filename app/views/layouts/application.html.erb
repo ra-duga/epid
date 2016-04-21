@@ -14,15 +14,12 @@
           <li class="nav-item">
             <%= link_to "Компании", companies_url, class: "nav-link" %>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/about">О проекте</a>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Добавить компанию", new_company_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Регистрация", new_employment_path, class: "nav-link" %>
-          </li>
+          <% if user_signed_in? %>
+            <li class="nav-item"><%= current_user.email %> <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %></li>
+          <% else %>
+            <li class="nav-item"><%= link_to 'Войти', new_user_session_path, class: "nav-link" %></li>
+            <li class="nav-item"><%= link_to 'Зарегистрироваться', new_user_registration_path, class: "nav-link" %></li>
+            <% end %>
         </ul>
         <h3 class="text-muted">ESTATE PROFESSIONAL ID</h3>
       </nav>
@@ -45,6 +42,12 @@
   <div class="container">
     <%= flash_messages %>
     <%= yield %>
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
 
   </div>
 

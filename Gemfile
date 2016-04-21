@@ -28,7 +28,7 @@ gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'simple_form'
 
 gem 'paperclip'
-
+gem 'devise'
 gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-bootstrap'
 gem 'russian', '~> 0.6.0'
